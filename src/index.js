@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import App from './components/app';
 import reducers from './reducers';
-
+if(process.env.WEBPACK) require('./scss/base.scss');
 const history = createBrowserHistory();
 const store = createStore(reducers, applyMiddleware(routerMiddleware(history)));
 

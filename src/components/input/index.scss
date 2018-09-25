@@ -1,0 +1,19 @@
+@import '../../scss/base.scss';  // base css to use the bootstrap gird layout and custom scss varaibles
+
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.input_container {
+    
+    & .primary_input {
+        width: 200px;
+        height: 50px;
+        border: 1px solid $input_border;
+        outline: none;
+    }
+    & label {
+        display: none;
+    }
+}

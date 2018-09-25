@@ -12,7 +12,8 @@ export default (req, res) => {
 			<!doctype html>
 			<html>
 				<head>
-					<title>My Universal App</title>
+					<title>UTDevelopers</title>
+					<link rel="fluid-icon" href="/assets/logo_fill.png" title="UTDevelopers">
 				</head>
 				<body>
 					<div id='app'></div>
@@ -25,7 +26,8 @@ export default (req, res) => {
 			<!doctype html>
 			<html>
 				<head>
-					<title>My Universal App</title>
+					<title>UTDevelopers</title>
+					<link rel="fluid-icon" href="/assets/logo_fill.png" title="UTDevelopers">
 					<link rel='stylesheet' href='bundle.css'>
 				</head>
 				<body>

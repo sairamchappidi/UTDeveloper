@@ -20,7 +20,7 @@ module.exports = {
 				NODE_ENV: JSON.stringify('development'),
 				WEBPACK: true
 			}
-		})
+		}),
 	],
 	module: {
 		loaders: [
@@ -35,11 +35,11 @@ module.exports = {
 				include: path.resolve(__dirname, 'src'),
 			},
 			{
-				test: /\.scss/,
+				test: /\.scss$/,
 				use: [
-					'style-loader',
-					'css-loader',
-					'sass-loader',
+					'style-loader', // creates style nodes from JS strings
+					'css-loader', // translates CSS into CommonJS
+					'sass-loader', // compiles Sass to CSS, using Node Sass by default
 					{
 						loader: 'postcss-loader',
 						options: {
@@ -52,7 +52,7 @@ module.exports = {
 					}
 				],
 				include: path.resolve(__dirname, 'src')
-			}
+			},
 		]
 	}
 };
