@@ -11,7 +11,7 @@
   },
   "author": "UTDevelopers",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^7.1.2",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
@@ -42,13 +42,7 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.4.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/justinjung04/universal-boilerplate.git"
-  },
-  "dependencies": {
+    "webpack-hot-middleware": "^2.12.2",
     "bootstrap": "^4.1.3"
   }
 }
