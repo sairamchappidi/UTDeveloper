@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'proptypes';
 if(process.env.WEBPACK) require('./index.scss');
 
-const Input = ({label, inputClass, inputId, inputName, inputType}) => {
+const Input = ({input, inputClass, inputId, inputName, inputType, placeHolder, label , meta: { touched, error }}) => {
     return (
     <div className='input_container'>
-        <input className={`primary_input ${inputClass}`} type={inputType} id={inputId} name={inputName} placeholder={label}/>
-        <label htmlfor={inputId}>{label}</label>
+        <label className='input_label' htmlFor={inputId}>{label}</label>
+        <input {...input} className={`primary_input ${inputClass}`} type={inputType} id={inputId} aria-label={label}
+        placeholder={placeHolder} name={inputName} autoComplete="off"/>
+        {touched && error && <span>{error}</span>}
     </div>
     )
 };
@@ -16,7 +18,7 @@ Input.defaultProps = {
     inputClass: '',
     inputType: 'text',
     inputName: '',
-    inputId: ''
+    inputId: 'inputId'
 };
 
 Input.propTypes = {

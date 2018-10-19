@@ -1,0 +1,22 @@
+@import '../../scss/base.scss';
+
+.button_container {
+    & .primary_button {
+        width: 105px;
+        height: 25px;
+        background: transparent;
+        color: $button_label;
+        text-transform: capitalize;
+        cursor: pointer;
+        font-weight: 800;
+        margin: 0 15px;
+        border: 1px solid $button_border;
+        border-radius: 10px;
+        outline: none;
+        
+        &:hover{
+            color: $button_hover;
+            background: $button_background;
+        }
+    }
+}

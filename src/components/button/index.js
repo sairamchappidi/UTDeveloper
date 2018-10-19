@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'proptypes';
+if(process.env.WEBPACK) require('./index.scss');
 
-const Button = ({label, buttonClass}) => {
+const Button = ({label, buttonClass, handleclick, submitting, buttonType}) => {
     return (
-        <button className={`priamry-button ${buttonClass}`}>{label}</button>
+        <div className='button_container'>
+            <button type={buttonType} className={`primary_button ${buttonClass}`} onClick={handleclick} disabled={submitting}>{label}</button>
+        </div>
     );
 };
 

@@ -1,0 +1,67 @@
+{
+    "navBar": 
+        [{
+            "url": "home",
+            "label": "Home"
+        },
+        {
+            "url": "project",
+            "label": "Project"
+        },
+        {
+            "url": "events",
+            "label": "Events"
+        },
+        {
+            "url": "ratings",
+            "label": "Ratings"
+        }
+    ],
+    "userDetails": {
+        "name": "Sai Ram Chappidi" ,
+        "ratings": [
+            {
+                "label": "Project Manager",
+                "name": "Nikhil" 
+            },
+            {
+                "label": "Project Name",
+                "name": "Scrapping" 
+            }
+        ],
+        "rating": "4.7"
+    },
+    "projectRating": [
+        {
+            "label": "Project Manager",
+            "name": "Nikhil" 
+        },
+        {
+            "label": "Project Name",
+            "name": "Scrapping" 
+        }
+    ],
+    "footer": {
+        "contactLabel": "contact Us" ,
+        "mailId": "utdevelopers@utdallas.edu",
+        "usefulLinkLabel": "Useful Links",
+        "links": [
+            "UTD CS Department"
+        ],
+        "socialLabel": "Social Media",
+        "socialLinks": [
+            {
+                "url": "facebook",
+                "logo": "facebook"
+            },
+            {
+                "url": "github",
+                "logo": "github"
+            },
+            {
+                "url": "linkedin",
+                "logo": "linkedin"
+            }
+        ]
+    }
+}

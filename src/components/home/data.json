@@ -1,0 +1,82 @@
+{
+    "navBar": 
+        [{
+            "url": "home",
+            "label": "Home"
+        },
+        {
+            "url": "project",
+            "label": "Project"
+        },
+        {
+            "url": "events",
+            "label": "Events"
+        }
+    ],
+    "loginLabel": "login",
+    "signUpLabel": "signUp",
+    "loginModal": {
+        "label": "login",
+       "fields": [
+           {
+                "label": "username",
+                "type": "text",
+                "placeHolder": "Enter username"
+           },
+           {
+                "label": "password",
+                "type": "password",
+                "placeHolder": "Enter Password"
+            }
+       ],
+       "forgetLabel": "Forget Password?"
+    },
+    "signUpModal": {
+        "label": "signUp",
+        "fields": [
+            {
+                "label": "username",
+                "type": "text",
+                "placeHolder": "Enter username"
+            },
+            {
+                "label": "password",
+                "type": "password",
+                "placeHolder": "Enter Password"
+            },
+            {
+                "label": "ConfirmPassword",
+                "type": "password",
+                "placeHolder": "ReEnter Password"
+            },
+            {
+                "label": "email",
+                "type": "text",
+                "placeHolder": "Enter emailId"
+            }
+        ]
+    },
+    "footer": {
+        "contactLabel": "contact Us" ,
+        "mailId": "utdevelopers@utdallas.edu",
+        "usefulLinkLabel": "Useful Links",
+        "links": [
+            "UTD CS Department"
+        ],
+        "socialLabel": "Social Media",
+        "socialLinks": [
+            {
+                "url": "facebook",
+                "logo": "facebook"
+            },
+            {
+                "url": "github",
+                "logo": "github"
+            },
+            {
+                "url": "linkedin",
+                "logo": "linkedin"
+            }
+        ]
+    }
+}

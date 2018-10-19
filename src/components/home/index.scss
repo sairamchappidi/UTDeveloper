@@ -1,41 +1,16 @@
-@import '../../scss/base.scss';  // base css to use the bootstrap gird layout and custom scss varaibles
+@import '../../scss/base.scss';
 
-.home {                /* name spacing classes so that we can use same class for different modules. */
-	@include make-container;  /* grid container by using include we are extending bootstrap grid*/
-	display: flex;
-	justify-content: center;
-	
-	& .container { 
-		@include make-row();  /* grid-row */
-		display: flex;
-		align-items: center;
+.home {
+	& .content {
+		@include make-container();
 	}
-	& .logo_container {
-		@include make-col-ready();
-		@include make-col(8);  /* grid- column */
-		display: flex;
-		align-items: center;
-		
-		@include media-breakpoint-up(lg) {   /* BreakPoint for desktop */
-			@include make-col(10);
-		}
-		& .logo {
-			height: 90px;
-		}
-		
-		& .title {
-			display: flex;
-			font-size: 44px;
-			align-items: center;
-		}
-	}
-	& .authentication {
-		@include make-col-ready();
-		@include make-col(2);
 
-		@include media-breakpoint-up(lg) {
-			@include make-col(2);
-		}
-		display: flex;
+	& .container {
+		@include make-row();
+
 	}
+	& .text_region, .image_region {
+        @include make-col-ready();
+		@include make-col(6);
+	} 
 }

@@ -1,20 +1,26 @@
 @import '../../scss/base.scss';  // base css to use the bootstrap gird layout and custom scss varaibles
 
 
-.link_button {
-    width: 105px;
-    height: 25px;
-    background: transparent;
-    border: 1px solid $button_border;
-    color: $button_label;
-    text-transform: capitalize;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 800;
-    margin: 0 15px;
+.link {
 
-    &:hover{
-        color: $button_hover;
-        background: $button_background;
+    .link_button {
+        width: 105px;
+        height: 25px;
+        background: transparent;
+        color: $button_label;
+        text-transform: capitalize;
+        cursor: pointer;
+        font-weight: 800;
+        margin: 0 15px;
+        border: none;
+        &:hover{
+            color: $button_hover;
+            background: $button_background;
+        }
+    }
+    & .selected {
+        border: 1px solid $button_border;
+        color: $button_border;
+        border-radius: 5px;
     }
 }

@@ -1,0 +1,47 @@
+@import '../../scss/base.scss';
+
+.footer {
+    @include make-container; 
+	display: flex;
+    justify-content: center;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    
+    & .footer_container {
+        @include make-row();
+        width: 100%;
+        @include media-breakpoint-up(lg) {   
+            max-width: 100%;
+        }
+    }
+    & .footer_blocks {
+        @include make-col-ready();
+        @include make-col(4);
+        justify-content: center;
+        text-transform: capitalize; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;       
+    }
+    & .logo{
+        display: inline-flex;
+        height: 20px;
+        width: 20px;
+    }
+    & .facebook {
+        background-image: url('../../assets/facebook.png');
+    }
+    & .github {
+        background-image: url('../../assets/github.png');
+    }
+    & .linkedin {
+        background-image: url('../../assets/linkedin.png');
+    }
+    &.logo_counter {
+        display: flex;
+        flex-direction: row;
+        
+    }
+}

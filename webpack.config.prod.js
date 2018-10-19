@@ -60,7 +60,12 @@ module.exports = {
 					],
 				}),
 				include: path.resolve(__dirname, 'src')
-			}
+			},
+			{
+				test: /\.(jpe?g|png|gif|mp3)$/i,
+				include: path.resolve(__dirname, 'src'),
+				loaders: ['file-loader']
+			}, 
 		]
 	}
 };
