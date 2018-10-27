@@ -1,21 +1,32 @@
 import React ,{Component}from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, Form } from 'redux-form';
 import Button from '../button';
 import Input from '../input';
 import {validate} from './validation';
+import { auth } from '../../firebase';
 
 if(process.env.WEBPACK) require('./index.scss');
 
 class SignUp extends Component{
     handleClick = (values) => {
-		console.log(this.props);
+        console.log(values);
+        var email = values["username"];
+		var password = values["password"];
+		auth.doCreateUserWithEmailAndPassword(email, password)
+		.then(() => {
+			console.log("logged in");
+		})
+		.catch(error=>{
+			alert(error.message);
+			console.log(error);
+		})
     }
     
     render() {
         const {data, closeModal, handleSubmit, submitting} = this.props;
         return(
             <div className='signUp'>
-                <form onSubmit={handleSubmit(values => this.handleClick(values))}>
+                <Form onSubmit={handleSubmit(values => this.handleClick(values))}>
                     <button className='close_button' onClick={closeModal}>x</button>
                     {data.fields.map((field, index) => {
                         return (
@@ -34,7 +45,7 @@ class SignUp extends Component{
                         <Button label={data.label} submittin={submitting}/>
                         <a className='forget_label' href=''>{data.forgetLabel}</a>
                     </div>
-                </form>
+                </Form>
             </div>
         );
     }

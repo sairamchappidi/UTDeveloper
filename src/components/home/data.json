@@ -15,6 +15,7 @@
     ],
     "loginLabel": "login",
     "signUpLabel": "signUp",
+    "logoutLabel": "logout",
     "loginModal": {
         "label": "login",
        "fields": [
@@ -43,16 +44,6 @@
                 "label": "password",
                 "type": "password",
                 "placeHolder": "Enter Password"
-            },
-            {
-                "label": "ConfirmPassword",
-                "type": "password",
-                "placeHolder": "ReEnter Password"
-            },
-            {
-                "label": "email",
-                "type": "text",
-                "placeHolder": "Enter emailId"
             }
         ]
     },

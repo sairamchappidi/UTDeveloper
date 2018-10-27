@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 import data from './data.json';
+import withAuthorization from '../Session/withAuthorization';
+
 if(process.env.WEBPACK) require('./index.scss');
 
 class DashBoard extends Component {
@@ -36,4 +38,6 @@ class DashBoard extends Component {
     }
 }
 
-export default DashBoard;
+const authCondition = (authUser) => !!authUser;
+
+export default withAuthorization(authCondition)(DashBoard);
