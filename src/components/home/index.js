@@ -5,6 +5,7 @@ import Login from '../login';
 import data from './data.json';
 import SignUp from '../signUp';
 import Footer from '../footer';
+import { auth } from '../../firebase';
 
 if(process.env.WEBPACK) require('./index.scss');
 
@@ -40,6 +41,10 @@ class Home extends Component {
 		this.setState({signUpModal: true});
 	}
 
+	logOut = () => {
+		auth.doSignOut();
+	}
+
 	closeSignUpModal = () => {
 		this.setState({signUpModal: false});
 	}
@@ -52,7 +57,7 @@ class Home extends Component {
 		const {match} = this.props;
 		return (
 			<div className='home'>
-				<Header data={data} match={match} openLoginModal={this.openLoginModal} openSignUpModal={this.openSignUpModal}/>
+				<Header data={data} match={match} openLoginModal={this.openLoginModal} openSignUpModal={this.openSignUpModal} logOut={this.logOut}/>
 				<Modal
 				isOpen={this.state.loginModal}
 				onAfterOpen={this.afterOpenModal}
@@ -69,7 +74,7 @@ class Home extends Component {
 				style={customStyles}
 				contentLabel="signUpModal"
 				>
-					<SignUp data={data.signUpModal} closeModal={this.closeSignUpModal}/>
+					<SignUp data={data.signUpModal} closeModal={this.closeSignUpModal} email={this.userEmail} password={this.userPassword}/>
 				</Modal>
 				<div className='content'>
 					<div className='container'>

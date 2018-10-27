@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'proptypes';
 if(process.env.WEBPACK) require('./index.scss');
 
-const Input = ({input, inputClass, inputId, inputName, inputType, placeHolder, label , meta: { touched, error }}) => {
+const Input = ({input, inputClass, inputId, inputName, inputType, placeHolder, label , inputValue,  meta: { touched, error }}) => {
     return (
     <div className='input_container'>
         <label className='input_label' htmlFor={inputId}>{label}</label>
