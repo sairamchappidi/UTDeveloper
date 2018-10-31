@@ -31,11 +31,11 @@ if(process.env.WEBPACK) require('./index.scss');
             <Button label={data.logoutLabel} handleclick={logOut}/>
           </div>
         }
-        {
+        {/* {
           data.userDetails && <div className='user_details'>
             <span className='user_name'> {data.userDetails.name}</span>
           </div>
-        }
+        } */}
     </div>
   </div>
 }

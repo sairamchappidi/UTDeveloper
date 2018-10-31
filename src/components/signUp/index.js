@@ -9,12 +9,13 @@ if(process.env.WEBPACK) require('./index.scss');
 
 class SignUp extends Component{
     handleClick = (values) => {
-        console.log(values);
         var email = values["username"];
 		var password = values["password"];
 		auth.doCreateUserWithEmailAndPassword(email, password)
 		.then(() => {
-			console.log("logged in");
+            const {closeModal, history} = this.props;
+            closeModal();
+            history.push('/dash');
 		})
 		.catch(error=>{
 			alert(error.message);

@@ -40,4 +40,6 @@ class DashBoard extends Component {
 
 const authCondition = (authUser) => !!authUser;
 
-export default withAuthorization(authCondition)(DashBoard);
+// export default withAuthorization(authCondition)(DashBoard);
+
+export default DashBoard;

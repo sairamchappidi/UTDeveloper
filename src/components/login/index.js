@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Field, reduxForm, Form } from 'redux-form';
+
 import {validate} from './validation';
 import Button from '../button';
 import Input from '../input';
@@ -10,13 +11,13 @@ if(process.env.WEBPACK) require('./index.scss');
 
 class Login extends Component{
 	handleClick = (values) => {
-		console.log(values);
 		var email = values["username"];
 		var password = values["password"];
 		auth.doSignInWithEmailAndPassword(email, password)
 		.then(() => {
-			this.props.closeModal();
-			console.log("logged in");
+			const { closeModal, history} = this.props;
+			closeModal();
+			history.push('/dash');
 		})
 		.catch(error=>{
 			alert(error.message);

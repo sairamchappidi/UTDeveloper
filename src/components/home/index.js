@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import { withRouter } from 'react-router-dom';
+
 import Header from '../header';
 import Login from '../login';
 import data from './data.json';
@@ -49,12 +51,16 @@ class Home extends Component {
 		this.setState({signUpModal: false});
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		Modal.setAppElement('body');
 	}
 
+	// componentWillUnmount() {
+	// 	Modal.setAppElement('body');
+	// }
+
 	render() {
-		const {match} = this.props;
+		const {match, history} = this.props;
 		return (
 			<div className='home'>
 				<Header data={data} match={match} openLoginModal={this.openLoginModal} openSignUpModal={this.openSignUpModal} logOut={this.logOut}/>
@@ -65,7 +71,7 @@ class Home extends Component {
 				style={customStyles}
 				contentLabel="loginModal"
 				>
-					<Login data={data.loginModal} closeModal={this.closeLoginModal}/>
+					<Login data={data.loginModal} closeModal={this.closeLoginModal} history={history}/>
 				</Modal>
 				<Modal
 				isOpen={this.state.signUpModal}
@@ -74,7 +80,7 @@ class Home extends Component {
 				style={customStyles}
 				contentLabel="signUpModal"
 				>
-					<SignUp data={data.signUpModal} closeModal={this.closeSignUpModal} email={this.userEmail} password={this.userPassword}/>
+					<SignUp data={data.signUpModal} closeModal={this.closeSignUpModal} history={history} email={this.userEmail} password={this.userPassword}/>
 				</Modal>
 				<div className='content'>
 					<div className='container'>
@@ -98,4 +104,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default withRouter(Home);
