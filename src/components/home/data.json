@@ -1,11 +1,11 @@
 {
     "navBar": 
         [{
-            "url": "home",
+            "url": "",
             "label": "Home"
         },
         {
-            "url": "project",
+            "url": "dash",
             "label": "Project"
         },
         {

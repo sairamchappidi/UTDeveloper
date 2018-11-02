@@ -4,14 +4,10 @@ import ReactStars from 'react-stars';
 import Button from '../button';
 if(process.env.WEBPACK) require('./index.scss');
 
-class RatingCard extends Component{
+class RatingBlock extends Component{
     constructor(){
         super();
 
-        this.state = {
-            initialValue: 4,
-            updateValue: 0
-        };
     }
 
     handleClick = () => {
@@ -28,13 +24,11 @@ class RatingCard extends Component{
     }
 
     render() {
-        const { initialValue, updateValue} = this.state;
-        const {projectName, projectMember} = this.props;
+        const {projectName, initialValue} = this.props;
         return(
             <div className='rating_card'>
                 <div className='result_container'>
-                    <span className='result_image'/>
-                    <span>{projectMember}</span>
+                    <span>{projectName}</span>
                     <span>
                         <ReactStars
                             count={5}
@@ -46,22 +40,9 @@ class RatingCard extends Component{
                         />
                     </span>
                 </div>
-                <div className='edit_container'>
-                    <span>{projectName}</span>
-                    <span>
-                        <ReactStars
-                            count={5}
-                            onChange={this.ratingChanged}
-                            size={24}
-                            color2={'#5D8245'}
-                            value={updateValue}
-                        />
-                        </span>
-                    <Button label='Rate' buttonClass='rate_button' handleclick={this.handleClick}/>
-                </div>
             </div>
         );
     }
 }
 
-export default RatingCard;
+export default RatingBlock;

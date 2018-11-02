@@ -7,7 +7,6 @@ import Login from '../login';
 import data from './data.json';
 import SignUp from '../signUp';
 import Footer from '../footer';
-import { auth } from '../../firebase';
 
 if(process.env.WEBPACK) require('./index.scss');
 
@@ -43,10 +42,6 @@ class Home extends Component {
 		this.setState({signUpModal: true});
 	}
 
-	logOut = () => {
-		auth.doSignOut();
-	}
-
 	closeSignUpModal = () => {
 		this.setState({signUpModal: false});
 	}
@@ -55,9 +50,6 @@ class Home extends Component {
 		Modal.setAppElement('body');
 	}
 
-	// componentWillUnmount() {
-	// 	Modal.setAppElement('body');
-	// }
 
 	render() {
 		const {match, history} = this.props;

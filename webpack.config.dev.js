@@ -12,6 +12,7 @@ module.exports = {
 		filename: 'bundle.js',
 		publicPath: '/'
 	},
+	devtool: 'source-map',
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),

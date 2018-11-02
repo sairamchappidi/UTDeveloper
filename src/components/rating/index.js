@@ -33,7 +33,7 @@ class Rating extends Component {
 
     render() {
         const {match} = this.props;
-        const {leadersRating, membersRating, initialValue, updateValue} = this.state;
+        const {leadersRating, membersRating} = this.state;
         return(
             <div className='rating'>
                 <Header data={data} match={match}/>
@@ -51,12 +51,18 @@ class Rating extends Component {
                                 <Button label='Project Members' buttonClass={`switch_button ${membersRating ? 'selected' : 'unselected'}`} handleclick={this.switchToMember}/>
                             </div>
                             <div className={`leader_rating_container ${leadersRating ? 'active': 'inactive'}`}>
-                                <RatingCard />
-                                <RatingCard />                        
+                                {data.projectRating.map((project, index) => {
+                                    return(
+                                        <RatingCard projectMember={project.name}  projectName={project.label} key={index}/>
+                                    );
+                                })}
                             </div>
                             <div className={`member_rating_container ${membersRating ? 'active': 'inactive'}`}>
-                                <RatingCard />
-                                <RatingCard />                        
+                            {data.userRating.map((project, index) => {
+                                    return(
+                                        <RatingCard projectMember={project.name}  projectName={project.label} key={index}/>
+                                    );
+                                })}                     
                             </div>
                         </div>
                     </div>

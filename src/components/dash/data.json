@@ -1,11 +1,11 @@
 {
     "navBar": 
         [{
-            "url": "/",
+            "url": "",
             "label": "Home"
         },
         {
-            "url": "project",
+            "url": "dash",
             "label": "Project"
         },
         {
@@ -17,6 +17,7 @@
             "label": "Ratings"
         }
     ],
+    "logoutLabel": "logout",
     "userDetails": {
         "name": "Sai Ram Chappidi" ,
         "ratings": [

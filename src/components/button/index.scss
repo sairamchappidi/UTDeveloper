@@ -14,9 +14,12 @@
         border-radius: 10px;
         outline: none;
         
-        &:hover{
+        & :hover{
             color: $button_hover;
             background: $button_background;
+        }
+        & :focus {
+            outline: none;
         }
     }
 }

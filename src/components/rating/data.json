@@ -1,11 +1,11 @@
 {
     "navBar": 
         [{
-            "url": "/",
+            "url": "",
             "label": "Home"
         },
         {
-            "url": "project",
+            "url": "dash",
             "label": "Project"
         },
         {
@@ -13,10 +13,11 @@
             "label": "Events"
         },
         {
-            "url": "ratings",
+            "url": "rating",
             "label": "Ratings"
         }
     ],
+    "logoutLabel": "logout",
     "userDetails": {
         "name": "Sai Ram Chappidi" ,
         "ratings": [
@@ -33,12 +34,22 @@
     },
     "projectRating": [
         {
-            "label": "Project Manager",
+            "label": "WebScrapping - C#",
             "name": "Nikhil" 
         },
         {
-            "label": "Project Name",
-            "name": "Scrapping" 
+            "label": "WebScrapping - Python",
+            "name": "Nikhil" 
+        }
+    ],
+    "userRating": [
+        {
+            "label": "WebScrapping - C#",
+            "name": "Deepesh" 
+        },
+        {
+            "label": "WebScrapping - Python",
+            "name": "Safal" 
         }
     ],
     "footer": {

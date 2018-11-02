@@ -1,12 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 import RouteTo from '../link';
 import Button from '../button';
+
 import withAuthentication from "../Session/withAuthentication";
 import AuthUserContext from '../Session/AuthUserContext';
+import { auth } from '../../firebase';
 
 if(process.env.WEBPACK) require('./index.scss');
 
- const Header =  ({ data, match, openLoginModal, openSignUpModal, logOut }) => <AuthUserContext.Consumer>
+const logOut = (history) => {
+  auth.doSignOut();
+  history.push('');
+};
+
+ const Header =  ({ data, match, openLoginModal, openSignUpModal, history }) => <AuthUserContext.Consumer>
    {authUser =>
     <div className='header'>
       <div className='container'>
@@ -28,17 +37,12 @@ if(process.env.WEBPACK) require('./index.scss');
         {
           authUser!=null && <div className='authentication'>
             {authUser.email}
-            <Button label={data.logoutLabel} handleclick={logOut}/>
+            <Button label={data.logoutLabel} handleclick={() => logOut(history)}/>
           </div>
         }
-        {/* {
-          data.userDetails && <div className='user_details'>
-            <span className='user_name'> {data.userDetails.name}</span>
-          </div>
-        } */}
     </div>
   </div>
 }
 </AuthUserContext.Consumer>;
 
-export default withAuthentication(Header);
+export default withRouter(withAuthentication(Header));

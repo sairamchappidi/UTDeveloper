@@ -10,6 +10,7 @@ if(process.env.WEBPACK) require('./index.scss');
 
 
 class Login extends Component{
+	
 	handleClick = (values) => {
 		var email = values["username"];
 		var password = values["password"];
@@ -24,6 +25,7 @@ class Login extends Component{
 			console.log(error);
 		});
 	}
+
 	render() {
 		const {data, closeModal, handleSubmit, submitting} = this.props;
 		return (

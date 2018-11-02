@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 import data from './data.json';
+import RatingBlock from '../RatingBlock';
+
 import withAuthorization from '../Session/withAuthorization';
 
 if(process.env.WEBPACK) require('./index.scss');
@@ -22,12 +24,8 @@ class DashBoard extends Component {
                             <span className='rating_value'>{data.userDetails.rating}</span>
                         </div>
                         <div className='rating_details'>
-                            <div className='user_rating'>
-                                {data.userDetails.ratings.map((detail, index) => {
-                                    return (<span key={index} className='rating_details'>{detail.label}</span>)
-                                })}
-                            </div>
-                            <div className='project_rating'></div>
+                            <RatingBlock projectName='Webscrapping - C#' initialVlaue={4.5}/>
+                            <RatingBlock projectName='Webscrapping - Python' initialVlaue={3}/>
                         </div>
                     </div>
 

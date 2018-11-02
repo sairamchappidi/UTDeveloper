@@ -2,8 +2,11 @@ import path from 'path';
 import express from 'express';
 import webpack from 'webpack';
 import middleware from './src/middleware';
+import dotenv from 'dotenv';
 
 const app = express();
+dotenv.config();
+console.log(process.env.APP_API_KEY, 'APP_API_KEY');
 
 if(process.env.NODE_ENV === 'development') {
 	const config = require('./webpack.config.dev');
